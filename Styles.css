@@ -1,0 +1,303 @@
+/* ----------Style du menu---------- */
+.Container_Menu {
+    background-color: #E2E4E3;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Container_Menu p {
+    color: black;
+    font-family: fantasy;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+#Liste_Menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+#Liste_Menu li {
+    display: inline;
+    margin: 2%;
+}
+
+#Liste_Menu li a {
+    color: #666;
+}
+
+#Liste_Menu li a:hover {
+    color: #333;
+}
+
+#Logo {
+    max-width: 100px;
+}
+
+
+
+
+/* ----------Style du pied de page---------- */
+.Footer_Nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+.Footer_Nav li {
+    margin: 0 10px;
+}
+
+.Footer_Nav li a {
+    text-decoration: none;
+    color: #666;
+}
+
+.Footer_Nav li a:hover {
+    color: #333;
+}
+
+.Footer_Text {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+
+
+
+/* ----------Style du corps de page---------- */
+.Container_Body {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 1400px;
+    /*box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);*/
+    padding: 0 20px;
+    /* Ajouter un peu de marge intérieure */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.Container_Body h2 {
+    margin-bottom: 50px;
+}
+
+.container_body_image {
+    display: block;
+    margin: 0 auto;
+}
+
+.Container_Body_P {
+    text-align: justify;
+    margin: auto;
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+/* ----------Style pour le véhicule---------- */
+.container_vehicule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vehicule {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.img_vehicule {
+    width: 260px;
+}
+
+.info_vehicule {
+    flex: 1;
+    margin: 5px 0;
+    padding: 0 0 0 0;
+    text-align: center;
+}
+
+.btn-achat,
+.btn-reservation {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* ----------Style pour la concession----------*/
+.container_concession {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.concession {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.img_concession {
+    width: 300px;
+}
+
+.info_concession {
+    flex: 1;
+    margin: 5px 0;
+    padding: 0 0 0 0;
+    text-align: center;
+}
+
+.concession button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* ----------Style pour la connexion et inscription----------*/
+.Container_Body_Connexion {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.container-form {
+
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #333;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+.small {
+    font-size: 14px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.btn-submit:active {
+    background-color: #004080;
+}
+
+p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* ----------Style pour la page Achat---------- */
+
+.Body_Achat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0;
+}
+
+.Container_Achat {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
