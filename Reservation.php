@@ -1,19 +1,14 @@
 <?php
-// Inclusion du fichier de configuration
 include 'config.php';
 
-// Vérification de la session utilisateur
 session_start();
 if (!isset($_SESSION['user'])) {
-    // Si l'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
     header("Location: Connexion.php");
     exit();
 }
 
-// Récupération de l'ID de l'utilisateur connecté
-$user = $_SESSION['user'];
 
-// Sélection des véhicules réservés par l'utilisateur connecté
+$user = $_SESSION['user'];
 $query = $bdd->prepare("SELECT v.marque, v.modele FROM voiture vINNER JOIN achat a ON v.id = a.id_vehicule WHERE a.email_utilisateur = ?");
 $query->execute(array($user));
 $reservations = $query->fetchAll(PDO::FETCH_ASSOC);

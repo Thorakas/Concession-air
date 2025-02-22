@@ -7,11 +7,41 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Connexion</title>
   <link rel="stylesheet" href="Styles.css">
 </head>
 
+
+<header>
+  <?php if (isset($_GET['reg_success'])) : ?>
+    <div class="Alert_Inscription">
+      ✅ Inscription réussie !
+    </div>
+    <script>
+      setTimeout(() => {
+        document.querySelector(".Alert_Inscription").style.display = "none";
+      }, 4000); // Disparition après 4 secondes
+    </script>
+  <?php endif; ?>
+
+
+  <?php if (isset($_GET['Alert_reset'])) : ?>
+    <div class="Alert_Reset">
+      ✅ Mot de passe réinitialisé avec succès ! Vérifiez votre e-mail.
+    </div>
+    <script>
+      setTimeout(() => {
+        document.querySelector(".Alert_Reset").style.display = "none";
+      }, 4000);
+    </script>
+  <?php endif; ?>
+
+
+</header>
+
+
 <body>
+  <!-- id: test@test.fr     mdp: test -->
   <div class="Container_Body_Connexion">
     <?php
     if (isset($_GET['login_err'])) {

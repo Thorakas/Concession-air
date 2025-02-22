@@ -205,7 +205,7 @@ nav {
 
 
 
-/* ----------Style pour la connexion et inscription----------*/
+/* ----------Style pour la page connexion et inscription----------*/
 .Container_Body_Connexion {
     background-color: #222;
     color: #fff;
@@ -300,4 +300,17 @@ a:hover {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
+}
+
+
+.Alert_Connexion,
+.Alert_Reset,
+.Alert_Inscription {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+
 }

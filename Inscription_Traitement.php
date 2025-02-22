@@ -1,8 +1,7 @@
 <?php require_once 'config.php';
 
-// Si les variables existent et qu'elles ne sont pas vides
+// Verifie que les variables existent et qu'elles ne sont pas vides
 if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_retype']) && !empty($_POST['prenom']) && !empty($_POST['nom'])) {
-    // Patch XSS
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
     $password_retype = htmlspecialchars($_POST['password_retype']);
@@ -11,21 +10,19 @@ if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['pass
 
 
 
-    // On vérifie si l'utilisateur existe
     $check = $bdd->prepare('SELECT email FROM utilisateur WHERE email = ?');
     $check->execute(array($email));
     $data = $check->fetch();
     $row = $check->rowCount();
 
-    $email = strtolower($email); // on transforme toute les lettres majuscule en minuscule
+    $email = strtolower($email);
 
-    // Si la requete renvoie un 0 alors l'utilisateur n'existe pas 
     if ($row == 0) {
-        if (strlen($email) <= 100) { // On verifie que la longueur du mail <= 100
-            if (filter_var($email, FILTER_VALIDATE_EMAIL)) { // Si l'email est de la bonne forme
-                if ($password == $password_retype) { // si les deux mdp saisis sont bon
+        if (strlen($email) <= 100) {
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                if ($password == $password_retype) {
 
-                    // On hash le mot de passe avec Bcrypt, via un coût de 12
+
                     $cost = ['cost' => 12];
                     $password = password_hash($password, PASSWORD_BCRYPT, $cost);
 
@@ -37,8 +34,8 @@ if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['pass
                         'email' => $email,
                         'prenom' => $prenom
                     ));
-                    // On redirige avec le message de succès
-                    header('Location:inscription.php?reg_err=success');
+
+                    header('Location:Connexion.php?reg_success=1');
                     die();
                 } else {
                     header('Location: inscription.php?reg_err=password');

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Véhicule</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 
@@ -16,7 +16,7 @@
     <div class="Container_Body">
         <div class="container_vehicule">
             <?php
-            /* requete qui va chercher les VH présent dans cette concession */
+            /* requete qui va chercher les vehicule présent dans une concession précise*/
             if (isset($_POST['id_concession'])) {
                 $idConcession = $_POST['id_concession'];
                 $query = "SELECT * FROM voiture WHERE id_concession = :id_concession";
@@ -44,7 +44,7 @@
                     echo "</div>";
                 }
             } else {
-                // Si l'identifiant de la concession n'est pas passé, retourne un message d'erreur
+
                 echo "Identifiant de concession non spécifié.";
             }
 

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Concession</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 
@@ -16,6 +16,7 @@
     <div class="Container_Body">
         <div class="container_concession">
             <?php
+            // récupère et affiche toutes les concessions existantes dans la BDD
             $query = "SELECT * FROM concession";
             $stmt = $bdd->query($query);
 
@@ -37,6 +38,9 @@
             ?>
         </div>
     </div>
+    <footer>
+        <?php include 'Pied_De_Page.php'; ?>
+    </footer>
 </body>
 
 </html>

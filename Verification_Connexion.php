@@ -12,7 +12,7 @@ require_once 'config.php';
 if (isset($_POST['email']) && isset($_POST['password'])) {
     // Patch XSS        
     $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
+    $password = $_POST['password'];
 
     $email = strtolower($email); // email transformé en minuscule
 
@@ -32,7 +32,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             if (password_verify($password, $data['password'])) {
 
                 $_SESSION['user'] = $data['prenom'];
-                header('Location: Accueil.php');
+                header('Location: Accueil.php?login_success=1');
                 die();
             } else {
                 header('Location: Connexion.php?login_err=password');

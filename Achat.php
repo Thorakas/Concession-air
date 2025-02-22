@@ -25,7 +25,7 @@
         $nom = $userData['nom'];
         $prenom = $userData['prenom'];
     } else {
-        // Si aucun utilisateur n'est connecté, laissez les champs vides
+
         $nom = "";
         $prenom = "";
     }

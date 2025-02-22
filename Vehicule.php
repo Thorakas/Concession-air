@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Véhicule</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 
@@ -16,7 +16,6 @@
     <div class="Container_Body">
         <div class="container_vehicule">
             <?php
-            /*$query = "SELECT * FROM voiture";*/
             $query = "SELECT v.*, c.Nom FROM voiture v JOIN concession c ON v.id_concession = c.id";
             $stmt = $bdd->query($query);
 
